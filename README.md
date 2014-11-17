@@ -48,27 +48,33 @@ It would be helpful to see an unadulterated dataset of comments, which also show
 
 ## Challenge 1
 
-[Screenshot your query and a result]
+![screenshot](weather/challenge_1.png)
 
 ## Challenge 2
 
-[Query snippet]
-[Answer]
+![screenshot](weather/challenge_2.png)
+
+db.normals.aggregate([{$match:{'DATE':/20100425.+/}},{$group:{_id:'$STATION_NAME', total:{$avg:'$HLY-WIND-AVGSPD'}}}])
+
+110.083333
 
 ## Challenge 3
 
-[Query snippet]
-[Answer]
+db.businesses.aggregate([{$match:{'city': 'Madison'}},{$group:{_id:0,total:{$sum:'$review_count'}}}])
+
+34410
 
 ## Challenge 4
 
-[Query snippet]
-[Answer]
+db.businesses.aggregate([{$match:{'city': 'Las Vegas'}},{$group:{_id:0,total:{$sum:'$review_count'}}}])
+
+577550
 
 ## Challenge 5
 
-[Query snippet]
-[Answer]
+db.businesses.aggregate([{$match:{'city': 'Phoenix'}},{$group:{_id:0,total:{$sum:'$review_count'}}}])
+
+200089
 
 ## Challenge 6 [BONUS]
 
